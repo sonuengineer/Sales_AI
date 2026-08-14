@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "company": "NexaFlow",
+    "scenario": "Fictional B2B SaaS company providing workflow automation for mid-market operations teams.",
+    "isDemoData": true,
+    "notice": "All people, organisations, email addresses and commercial details in this file are fictional training data.",
+    "currency": "USD"
+  },
+  "users": [
+    { "id": "usr-admin-001", "name": "Avery Morgan", "email": "admin@nexaflow.demo", "role": "ADMIN" },
+    { "id": "usr-instructor-001", "name": "Jordan Lee", "email": "instructor@nexaflow.demo", "role": "INSTRUCTOR" },
+    { "id": "usr-student-001", "name": "Taylor Shah", "email": "student@nexaflow.demo", "role": "STUDENT" }
+  ],
+  "salespeople": [
+    { "id": "sales-001", "userId": "usr-instructor-001", "territory": "North America", "capacity": 30 },
+    { "id": "sales-002", "name": "Priya Menon", "territory": "India", "capacity": 25 }
+  ],
+  "companies": [
+    { "id": "cmp-001", "name": "AtlasHR", "industry": "Human Resources", "employeeSize": "201-500", "region": "North America", "website": "https://atlashr.example", "isDemoData": true },
+    { "id": "cmp-002", "name": "BrightForge Manufacturing", "industry": "Manufacturing", "employeeSize": "501-1000", "region": "India", "website": "https://brightforge.example", "isDemoData": true },
+    { "id": "cmp-003", "name": "Cedar & Coast Retail", "industry": "Retail", "employeeSize": "51-200", "region": "North America", "website": "https://cedarcoast.example", "isDemoData": true }
+  ],
+  "leads": [
+    { "id": "lead-001", "companyId": "cmp-001", "contactName": "Maya Rivera", "jobTitle": "VP People Operations", "email": "maya.rivera@atlashr.example", "source": "Webinar", "ownerId": "sales-001", "stage": "SQL", "score": 82, "createdAt": "2026-07-20T09:00:00Z", "lastActivityAt": "2026-08-12T14:00:00Z", "nextActionAt": "2026-08-16T14:00:00Z", "expectedValue": 36000 },
+    { "id": "lead-002", "companyId": "cmp-002", "contactName": "Arjun Kapoor", "jobTitle": "Operations Director", "email": "arjun.kapoor@brightforge.example", "source": "Partner", "ownerId": "sales-002", "stage": "PROPOSAL", "score": 91, "createdAt": "2026-06-21T08:30:00Z", "lastActivityAt": "2026-08-01T10:00:00Z", "nextActionAt": "2026-08-15T10:00:00Z", "expectedValue": 72000 },
+    { "id": "lead-003", "companyId": "cmp-003", "contactName": "Elena Brooks", "jobTitle": "Revenue Operations Manager", "email": "elena.brooks@cedarcoast.example", "source": "Content Download", "ownerId": null, "stage": "MQL", "score": 58, "createdAt": "2026-08-03T11:15:00Z", "lastActivityAt": "2026-08-04T11:15:00Z", "nextActionAt": "2026-08-05T11:15:00Z", "expectedValue": 18000 }
+  ],
+  "activities": [
+    { "id": "act-001", "leadId": "lead-001", "type": "MEETING", "subject": "Discovery call", "occurredAt": "2026-08-12T14:00:00Z", "ownerId": "sales-001", "notes": "Discussed onboarding workflow pain points." },
+    { "id": "act-002", "leadId": "lead-002", "type": "EMAIL", "subject": "Proposal shared", "occurredAt": "2026-08-01T10:00:00Z", "ownerId": "sales-002", "notes": "Fictional proposal sent for training scenario." }
+  ],
+  "opportunities": [
+    { "id": "opp-001", "companyId": "cmp-002", "leadId": "lead-002", "ownerId": "sales-002", "stage": "PROPOSAL", "amount": 72000, "currency": "USD", "expectedCloseDate": "2026-08-30" }
+  ]
+}
