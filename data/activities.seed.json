@@ -1,0 +1,126 @@
+{
+  "quizzes": [
+    {
+      "id": "quiz-01",
+      "moduleId": "mod-01",
+      "title": "Sales operations & sales intelligence check",
+      "passScore": 70,
+      "questions": [
+        { "prompt": "What does sales intelligence primarily turn into better decisions?", "options": ["Reliable CRM and activity data", "Sales team intuition", "Marketing spend", "Product pricing"], "correctOption": 0, "explanation": "Sales intelligence is the practice of turning reliable CRM and activity data into decisions that help sales teams prioritise action.", "position": 1 },
+        { "prompt": "Which of the following is an example of an intent signal on a lead?", "options": ["Attending a product webinar", "Having an existing contract", "Company office location", "Number of employees"], "correctOption": 0, "explanation": "Engagement such as attending a webinar signals buying intent, while firmographic details like employee count are company fit signals.", "position": 2 },
+        { "prompt": "In the NexaFlow lifecycle, which stage normally comes right after MQL?", "options": ["SQL", "NEW", "CLOSED_WON", "PROPOSAL"], "correctOption": 0, "explanation": "A marketing-qualified lead (MQL) becomes a sales-qualified lead (SQL) once sales confirms fit and intent.", "position": 3 }
+      ]
+    },
+    {
+      "id": "quiz-02",
+      "moduleId": "mod-02",
+      "title": "Excel for sales intelligence check",
+      "passScore": 70,
+      "questions": [
+        { "prompt": "Why is cleaning data before analysis important?", "options": ["Dirty data produces misleading KPIs", "It makes spreadsheets larger", "It speeds up typing", "It replaces the need for a CRM"], "correctOption": 0, "explanation": "Clean data is a prerequisite for trustworthy KPIs, funnel reporting and CRM governance.", "position": 1 },
+        { "prompt": "Which action best addresses duplicate lead records?", "options": ["Merge or de-duplicate on a unique identifier", "Hide them with a filter", "Delete every row with similar names", "Leave them for reporting"], "correctOption": 0, "explanation": "Duplicates are resolved by matching unique identifiers or business keys, not by guessing from similar names.", "position": 2 },
+        { "prompt": "A standardised value list for the Source field would use…", "options": ["A fixed set such as Webinar, Inbound, Referral", "Free text typed differently each time", "Only the latest entry", "Numbers instead of words"], "correctOption": 0, "explanation": "Standardising fields to a fixed value list keeps analytics grouping consistent.", "position": 3 }
+      ]
+    },
+    {
+      "id": "quiz-03",
+      "moduleId": "mod-03",
+      "title": "Power BI sales dashboard check",
+      "passScore": 70,
+      "questions": [
+        { "prompt": "What should come first when building a sales dashboard?", "options": ["Clear KPI definitions", "Choosing colours", "Connecting to data sources", "Adding animations"], "correctOption": 0, "explanation": "A good dashboard starts with clear, consistent KPI definitions so every viewer reads the same numbers.", "position": 1 },
+        { "prompt": "A lead funnel visualises…", "options": ["Leads at each lifecycle stage", "Only closed deals", "Salesperson salaries", "Marketing budget"], "correctOption": 0, "explanation": "A funnel shows how many leads sit at each lifecycle stage and where conversion drops off.", "position": 2 },
+        { "prompt": "Which is a measure rather than a dimension?", "options": ["Pipeline value in USD", "Company industry", "Lead source", "Region"], "correctOption": 0, "explanation": "Pipeline value is a numeric measure; industry, source and region are dimensions used to slice it.", "position": 3 }
+      ]
+    },
+    {
+      "id": "quiz-04",
+      "moduleId": "mod-04",
+      "title": "CRM fundamentals & governance check",
+      "passScore": 70,
+      "questions": [
+        { "prompt": "CRM field governance defines…", "options": ["Which data is required and who keeps it trustworthy", "The colour of the CRM interface", "How many users can log in", "The annual budget"], "correctOption": 0, "explanation": "Governance sets required fields, owners and standards so CRM records stay reliable.", "position": 1 },
+        { "prompt": "Why does every lead need a clear owner?", "options": ["Accountability for follow-up and progress", "So records can be duplicated", "To limit total leads", "Because owners approve pricing"], "correctOption": 0, "explanation": "An owner is accountable for acting on the lead, which prevents records from being lost.", "position": 2 },
+        { "prompt": "Stage history matters because it…", "options": ["Makes pipeline movement auditable", "Increases data entry", "Replaces the activity timeline", "Is required by law"], "correctOption": 0, "explanation": "Stage history creates an auditable record of how and when a lead progressed through the lifecycle.", "position": 3 }
+      ]
+    },
+    {
+      "id": "quiz-05",
+      "moduleId": "mod-05",
+      "title": "Lead management & funnel check",
+      "passScore": 70,
+      "questions": [
+        { "prompt": "What is the difference between an MQL and an SQL?", "options": ["MQL fits marketing criteria; SQL is qualified by sales", "They are the same stage", "SQL is always older", "MQL is always unassigned"], "correctOption": 0, "explanation": "An MQL meets marketing-fit criteria; sales confirms fit and intent to turn it into an SQL.", "position": 1 },
+        { "prompt": "A lead is considered stale when…", "options": ["It has had no activity for several days", "It has a high score", "It belongs to a large company", "It was created this week"], "correctOption": 0, "explanation": "Staleness is measured by days without activity, which is why next actions and activity logging matter.", "position": 2 },
+        { "prompt": "Setting a next action date on every lead helps…", "options": ["Ensure no lead slips through the cracks", "Increase lead scores automatically", "Close the CRM", "Reduce data entry"], "correctOption": 0, "explanation": "A next action date creates a commitment that keeps follow-up cadence visible and measurable.", "position": 3 }
+      ]
+    },
+    {
+      "id": "quiz-06",
+      "moduleId": "mod-06",
+      "title": "Generative AI for sales intelligence check",
+      "passScore": 70,
+      "questions": [
+        { "prompt": "Before acting on an AI research output, you should…", "options": ["Verify the claims against reliable sources", "Send it immediately to the prospect", "Delete the original data", "Ignore contradicting evidence"], "correctOption": 0, "explanation": "AI can accelerate first drafts, but people must verify conclusions before taking action.", "position": 1 },
+        { "prompt": "A well-written prompt for lead research includes…", "options": ["Context about the company and the goal", "Only the prospect's first name", "A request to guess financials", "No constraints"], "correctOption": 0, "explanation": "Contextual prompts with a clear goal produce more useful simulated outputs.", "position": 2 },
+        { "prompt": "Why keep human judgement at the centre of AI-assisted sales work?", "options": ["AI can hallucinate facts and miss context", "AI always needs an API key", "Humans are slower but less accurate", "It is a legal requirement everywhere"], "correctOption": 0, "explanation": "AI outputs are simulated or probabilistic, so human review protects accuracy and relationships.", "position": 3 }
+      ]
+    },
+    {
+      "id": "quiz-07",
+      "moduleId": "mod-07",
+      "title": "AI automation & no-code check",
+      "passScore": 70,
+      "questions": [
+        { "prompt": "In a workflow, a trigger is…", "options": ["The event that starts the process", "The final approval", "The error message", "The reporting date"], "correctOption": 0, "explanation": "Workflows make repeatable work visible by starting from a defined trigger event.", "position": 1 },
+        { "prompt": "Why include a human approval step in an AI follow-up workflow?", "options": ["No message should be sent without human review", "To slow the pipeline down", "Because email cannot be automated", "To satisfy the CRM"], "correctOption": 0, "explanation": "Human approval keeps AI-suggested messages accurate, appropriate and safe to send.", "position": 2 },
+        { "prompt": "A no-code automation tool is best used for…", "options": ["Repeatable rules-based steps like lead routing", "Creative strategy with no inputs", "Manual data entry only", "Replacing the sales team"], "correctOption": 0, "explanation": "No-code tools automate predictable, rule-based operations such as scoring, routing and alerts.", "position": 3 }
+      ]
+    },
+    {
+      "id": "quiz-08",
+      "moduleId": "mod-08",
+      "title": "Market & competitive intelligence check",
+      "passScore": 70,
+      "questions": [
+        { "prompt": "Competitive intelligence should be based on…", "options": ["Verifiable evidence, not opinion", "Rumours from colleagues", "Pricing guesses", "The loudest competitor"], "correctOption": 0, "explanation": "Evidence-based, verifiable comparisons keep competitive intelligence relevant and credible.", "position": 1 },
+        { "prompt": "When comparing competitors, you should…", "options": ["Use the same criteria for every competitor", "Change criteria to favour one vendor", "Only list their weaknesses", "Ignore their pricing pages"], "correctOption": 0, "explanation": "A fair comparison applies consistent criteria across all competitors.", "position": 2 },
+        { "prompt": "A competitor brief is most useful when it is…", "options": ["Relevant to a specific sales context", "Very long", "Written once and never updated", "Focused only on products"], "correctOption": 0, "explanation": "Intelligence only helps when it is relevant, verifiable and actionable for the situation at hand.", "position": 3 }
+      ]
+    },
+    {
+      "id": "quiz-09",
+      "moduleId": "mod-09",
+      "title": "SOPs & stakeholder management check",
+      "passScore": 70,
+      "questions": [
+        { "prompt": "A useful SOP explains…", "options": ["Purpose, inputs, steps, owner and exception path", "Only the company history", "Sales quotas", "Marketing colours"], "correctOption": 0, "explanation": "A useful SOP covers why the process exists, what it needs, the steps, the owner and how exceptions are handled.", "position": 1 },
+        { "prompt": "Why does every SOP need a named process owner?", "options": ["Someone is accountable for keeping it current", "It looks more official", "Owners write all the content", "It reduces steps"], "correctOption": 0, "explanation": "A process owner keeps the SOP accurate, current and followed.", "position": 2 },
+        { "prompt": "The exception path in an SOP handles…", "options": ["Cases that do not fit the standard steps", "Normal day-to-day work", "Only technical errors", "Customer complaints about pricing"], "correctOption": 0, "explanation": "An exception path defines what happens when the standard flow does not apply.", "position": 3 }
+      ]
+    },
+    {
+      "id": "quiz-10",
+      "moduleId": "mod-10",
+      "title": "Capstone readiness check",
+      "passScore": 70,
+      "questions": [
+        { "prompt": "Which is one of the ten capstone deliverables?", "options": ["Lead scoring", "Office lease", "Company logo", "Sales quota"], "correctOption": 0, "explanation": "The capstone has ten deliverables including data cleaning, lead scoring, assignment rules, dashboards and an SOP library.", "position": 1 },
+        { "prompt": "A portfolio-ready capstone shows…", "options": ["A complete system, not just notes", "Only quiz results", "Personal opinions", "A single screenshot"], "correctOption": 0, "explanation": "Employers want evidence of a complete, working sales intelligence system built end to end.", "position": 2 },
+        { "prompt": "The final capstone deliverable is…", "options": ["A management report or presentation", "A certificate request", "A competitor price list", "A lesson summary"], "correctOption": 0, "explanation": "The capstone ends with a management report or presentation that communicates the built system.", "position": 3 }
+      ]
+    }
+  ],
+  "assignments": [
+    { "id": "asg-01", "moduleId": "mod-01", "title": "Map your sales funnel", "instructions": "Draw the NexaFlow lead lifecycle from NEW to CLOSED_WON / CLOSED_LOST. For each stage, write one sentence explaining what must happen for a lead to move forward and who is responsible. Submit as text or a link to your diagram.", "dueDate": "2026-08-20", "rubric": "Completeness of stages (40%) · clarity of the movement criteria (40%) · ownership assigned (20%)", "starterFiles": [] },
+    { "id": "asg-02", "moduleId": "mod-02", "title": "Clean a demo dataset", "instructions": "Using the fictional lead data in the CRM Lab, list three data-quality issues you can find (for example missing owners or inconsistent sources) and describe how you would clean each one in a spreadsheet. Submit your findings and your proposed cleaning steps.", "dueDate": "2026-08-10", "rubric": "Real issues identified (40%) · practical cleaning steps (40%) · clear write-up (20%)", "starterFiles": [] },
+    { "id": "asg-03", "moduleId": "mod-03", "title": "Define five sales KPIs", "instructions": "Define five KPIs a sales operations manager should track, using the Analytics page as inspiration. For each KPI give: name, definition, formula or calculation, and why it matters.", "dueDate": "2026-08-28", "rubric": "Five KPIs defined (30%) · formulas correct (40%) · business rationale (30%)", "starterFiles": [] },
+    { "id": "asg-04", "moduleId": "mod-04", "title": "CRM field standards", "instructions": "Write a one-page CRM field governance standard for NexaFlow: which lead fields are required, which use a fixed value list, who owns data quality, and how duplicates are handled.", "dueDate": "2026-09-04", "rubric": "Required fields defined (35%) · value lists (30%) · ownership and dedupe rules (35%)", "starterFiles": [] },
+    { "id": "asg-05", "moduleId": "mod-05", "title": "Lead routing plan", "instructions": "Design a lead scoring and routing plan for a fictional B2B SaaS company. Define 3–5 scoring factors with points, 3–4 assignment rules in priority order, and explain how workload is considered.", "dueDate": "2026-09-11", "rubric": "Scoring factors defined (35%) · assignment rules in priority order (35%) · workload handling (30%)", "starterFiles": [] },
+    { "id": "asg-06", "moduleId": "mod-06", "title": "AI research prompt set", "instructions": "Write three prompts a sales rep could use for lead research: one for company research, one for lead qualification and one for a follow-up draft. Test each in the AI Practice Lab and paste the simulated outputs with your verification notes.", "dueDate": "2026-09-18", "rubric": "Three prompts written (30%) · used in the AI lab (30%) · verification notes show human review (40%)", "starterFiles": [] },
+    { "id": "asg-07", "moduleId": "mod-07", "title": "Automation workflow map", "instructions": "Map one automation workflow for NexaFlow (for example stale-lead escalation). Show the trigger, each step, the decision points, the human approval steps and the final action.", "dueDate": "2026-09-25", "rubric": "Trigger and steps clear (40%) · decision and approval points (40%) · final action defined (20%)", "starterFiles": [] },
+    { "id": "asg-08", "moduleId": "mod-08", "title": "Competitor brief", "instructions": "Create a one-page competitive intelligence brief for a fictional workflow-automation company: three competitors, a consistent comparison criteria table, and three actionable takeaways for sales.", "dueDate": "2026-10-02", "rubric": "Three competitors compared (40%) · consistent criteria (30%) · actionable takeaways (30%)", "starterFiles": [] },
+    { "id": "asg-09", "moduleId": "mod-09", "title": "Write a usable SOP", "instructions": "Write a complete SOP for one sales operations process (for example: handling a new inbound lead). Include purpose, inputs, numbered steps, process owner and an exception path.", "dueDate": "2026-10-09", "rubric": "All SOP sections present (50%) · steps actionable (30%) · owner and exceptions defined (20%)", "starterFiles": [] },
+    { "id": "asg-10", "moduleId": "mod-10", "title": "Capstone delivery plan", "instructions": "List all ten capstone deliverables, mark which ones you have already practised in this platform, and write a two-week plan with a deadline for each remaining deliverable.", "dueDate": "2026-10-16", "rubric": "All ten deliverables listed (40%) · progress marked honestly (30%) · realistic plan (30%)", "starterFiles": [] }
+  ]
+}

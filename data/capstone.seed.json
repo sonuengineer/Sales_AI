@@ -1,0 +1,141 @@
+{
+  "capstone": {
+    "title": "AI-Powered Sales Intelligence & CRM Operations Platform",
+    "summary": "Build a complete, portfolio-ready sales intelligence system for the fictional company NexaFlow — from cleaning the raw dataset to a final management report. Complete all ten deliverables, then submit the capstone for final review.",
+    "deadline": "2026-10-31"
+  },
+  "deliverables": [
+    {
+      "id": "cap-del-01",
+      "position": 1,
+      "title": "Data cleaning",
+      "lessonId": "lesson-02",
+      "summary": "Clean the CRM dataset: identify duplicate records, missing values, invalid statuses, duplicate companies and missing owners. Document the issues you find and the rules you apply to fix them.",
+      "rubric": "Issues identified and documented (30%) · cleaning rules explained (30%) · cleaned example shown (40%)",
+      "relatedLinks": [
+        { "label": "Open CRM Lab", "target": "CRM Lab" },
+        { "label": "View Analytics", "target": "Analytics" }
+      ],
+      "instructorFiles": [
+        { "id": "ifile-demo-clean", "name": "example-cleaned-export.csv", "label": "Example cleaned export", "description": "A cleaned, deduplicated version of the CRM export for reference.", "contentType": "text/csv", "content": "lead_id,company,contact,source,owner,stage,score,expected_value\nlead-001,AtlasHR,Maya Rivera,Webinar,Jordan Lee,SQL,82,36000\nlead-002,BrightForge Manufacturing,Arjun Kapoor,Partner,Priya Menon,PROPOSAL,91,72000\nlead-003,Cedar & Coast Retail,Elena Brooks,Content Download,,MQL,58,18000\nlead-004,Meridian Health,Sofia Delgado,Inbound,Jordan Lee,NEW,45,30000\nlead-005,FinEdge Capital,Liam O'Connor,Referral,Priya Menon,OPPORTUNITY,88,54000" }
+      ],
+      "deadline": "2026-09-18"
+    },
+    {
+      "id": "cap-del-02",
+      "position": 2,
+      "title": "CRM data model",
+      "lessonId": "lesson-04",
+      "summary": "Design the CRM data model: lead, account, opportunity, deal and activity fields. Define the stage lifecycle and the governance rules that keep the data clean.",
+      "rubric": "Fields complete and justified (40%) · stage lifecycle correct (30%) · governance rules (30%)",
+      "relatedLinks": [
+        { "label": "Open CRM Lab", "target": "CRM Lab" }
+      ],
+      "deadline": "2026-09-25"
+    },
+    {
+      "id": "cap-del-03",
+      "position": 3,
+      "title": "Lead scoring",
+      "lessonId": "lesson-05",
+      "summary": "Build a scoring framework with company fit, industry fit, decision-maker role, engagement and intent. Assign weights that add to 100 and explain how the score is calculated.",
+      "rubric": "Weighting framework (30%) · factors justified (30%) · score calculation reproducible (40%)",
+      "relatedLinks": [
+        { "label": "Workflow Lab — scoring", "target": "Workflow Lab" },
+        { "label": "Open CRM Lab", "target": "CRM Lab" }
+      ],
+      "deadline": "2026-10-02"
+    },
+    {
+      "id": "cap-del-04",
+      "position": 4,
+      "title": "Lead assignment",
+      "lessonId": "lesson-05",
+      "summary": "Create assignment rules based on region, industry, employee size, lead score and salesperson workload. Show example leads routed through the rules and explain the outcome.",
+      "rubric": "Rules prioritised correctly (30%) · workload considered (30%) · worked examples (40%)",
+      "relatedLinks": [
+        { "label": "Workflow Lab — assignment", "target": "Workflow Lab" }
+      ],
+      "deadline": "2026-10-09"
+    },
+    {
+      "id": "cap-del-05",
+      "position": 5,
+      "title": "Sales dashboard",
+      "lessonId": "lesson-03",
+      "summary": "Build the sales dashboard: executive KPIs, lead funnel, TAT by stage and salesperson, stale-lead report, campaign and industry breakdowns, and employee-size segmentation.",
+      "rubric": "KPIs correct (30%) · funnel visualised (30%) · breakdowns and TAT included (40%)",
+      "relatedLinks": [
+        { "label": "Open Analytics", "target": "Analytics" },
+        { "label": "Open CRM Lab", "target": "CRM Lab" }
+      ],
+      "deadline": "2026-10-16"
+    },
+    {
+      "id": "cap-del-06",
+      "position": 6,
+      "title": "AI lead qualification",
+      "lessonId": "lesson-06",
+      "summary": "Build an AI-assisted qualification workflow that takes company information, industry, employee count, job role and website details, and produces a lead score, qualification, reason, potential pain point, suggested questions and recommended next action.",
+      "rubric": "Inputs defined (20%) · score and qualification output (30%) · pain points and questions (30%) · next action (20%)",
+      "relatedLinks": [
+        { "label": "Open AI Practice Lab", "target": "AI Practice Lab" },
+        { "label": "Open CRM Lab", "target": "CRM Lab" }
+      ],
+      "deadline": "2026-10-20"
+    },
+    {
+      "id": "cap-del-07",
+      "position": 7,
+      "title": "AI follow-up assistant",
+      "lessonId": "lesson-07",
+      "summary": "Design the follow-up workflow: a stale lead triggers AI analysis, the AI drafts a follow-up message, a salesperson reviews and approves it, and only then is it marked sent. Explain the human-approval gate.",
+      "rubric": "Workflow steps complete (30%) · human approval enforced (40%) · example draft shown (30%)",
+      "relatedLinks": [
+        { "label": "Open AI Practice Lab", "target": "AI Practice Lab" },
+        { "label": "Open CRM Lab", "target": "CRM Lab" }
+      ],
+      "deadline": "2026-10-23"
+    },
+    {
+      "id": "cap-del-08",
+      "position": 8,
+      "title": "Competitive intelligence",
+      "lessonId": "lesson-08",
+      "summary": "Create five competitor profiles with a comparison, battle cards, objection handling and industry insights. Use only fictional competitors for this training capstone.",
+      "rubric": "Five profiles (30%) · comparison and battle cards (40%) · objection handling and insights (30%)",
+      "relatedLinks": [
+        { "label": "View Analytics", "target": "Analytics" }
+      ],
+      "deadline": "2026-10-26"
+    },
+    {
+      "id": "cap-del-09",
+      "position": 9,
+      "title": "SOP library",
+      "lessonId": "lesson-09",
+      "summary": "Write at least seven SOPs: CRM data entry, lead assignment, lead qualification, stale lead, dashboard usage, AI usage and CRM issue escalation. Each SOP needs a purpose, owner, steps and version.",
+      "rubric": "Seven SOPs present (40%) · each has purpose, owner, steps, version (40%) · reusable format (20%)",
+      "relatedLinks": [
+        { "label": "Open Assignments", "target": "Assignments" }
+      ],
+      "instructorFiles": [
+        { "id": "ifile-demo-sop", "name": "example-sop-lead-assignment.md", "label": "Example SOP — lead assignment", "description": "A completed SOP following the template, as a reference.", "contentType": "text/markdown", "content": "# SOP — Lead Assignment\nVersion: 1.0 | Owner: Sales Operations Manager | Last reviewed: Aug 2026\n\n1. Purpose — every new lead gets an owner within 1 working day.\n2. Inputs — a validated lead record with company data and score.\n3. Steps:\n   1. Score the lead (System)\n   2. Evaluate assignment rules in priority order (System)\n   3. Check the matched rep's open workload against capacity (System)\n   4. Assign and notify the owner (System)\n   5. Log the rule that fired as the assignment reason (System)\n4. Owner — Sales Operations Manager, reviewed quarterly.\n5. Exception path — matched rep at capacity or absent → on-call rep; no rule matches → manual review queue within 24 hours." }
+      ],
+      "deadline": "2026-10-29"
+    },
+    {
+      "id": "cap-del-10",
+      "position": 10,
+      "title": "Management report",
+      "lessonId": "lesson-01",
+      "summary": "Present the final report to management: problem, analysis, insight, recommendation, AI opportunity and expected impact. This can be a written report or presentation — submit the link or embed the summary.",
+      "rubric": "Problem and analysis (20%) · insight (20%) · recommendation (20%) · AI opportunity (20%) · expected impact (20%)",
+      "relatedLinks": [
+        { "label": "View Analytics", "target": "Analytics" },
+        { "label": "Open AI Practice Lab", "target": "AI Practice Lab" }
+      ],
+      "deadline": "2026-10-31"
+    }
+  ]
+}

@@ -4,32 +4,125 @@
     "scenario": "Fictional B2B SaaS company providing workflow automation for mid-market operations teams.",
     "isDemoData": true,
     "notice": "All people, organisations, email addresses and commercial details in this file are fictional training data.",
-    "currency": "USD"
+    "currency": "USD",
+    "referenceDate": "2026-08-16T00:00:00Z"
   },
   "users": [
     { "id": "usr-admin-001", "name": "Avery Morgan", "email": "admin@nexaflow.demo", "role": "ADMIN" },
     { "id": "usr-instructor-001", "name": "Jordan Lee", "email": "instructor@nexaflow.demo", "role": "INSTRUCTOR" },
-    { "id": "usr-student-001", "name": "Taylor Shah", "email": "student@nexaflow.demo", "role": "STUDENT" }
+    { "id": "usr-student-001", "name": "Taylor Shah", "email": "student@nexaflow.demo", "role": "STUDENT" },
+    { "id": "usr-student-002", "name": "Amara Okafor", "email": "student2@nexaflow.demo", "role": "STUDENT" },
+    { "id": "usr-student-003", "name": "Ben Carter", "email": "student3@nexaflow.demo", "role": "STUDENT" },
+    { "id": "usr-student-004", "name": "Chen Wei", "email": "student4@nexaflow.demo", "role": "STUDENT" },
+    { "id": "usr-student-005", "name": "Diana Petrova", "email": "student5@nexaflow.demo", "role": "STUDENT" },
+    { "id": "usr-student-006", "name": "Elena García", "email": "student6@nexaflow.demo", "role": "STUDENT" },
+    { "id": "usr-student-007", "name": "Farid Haddad", "email": "student7@nexaflow.demo", "role": "STUDENT" },
+    { "id": "usr-student-008", "name": "Grace Kim", "email": "student8@nexaflow.demo", "role": "STUDENT" },
+    { "id": "usr-student-009", "name": "Hugo Silva", "email": "student9@nexaflow.demo", "role": "STUDENT" },
+    { "id": "usr-student-010", "name": "Ingrid Bauer", "email": "student10@nexaflow.demo", "role": "STUDENT" }
   ],
   "salespeople": [
     { "id": "sales-001", "userId": "usr-instructor-001", "territory": "North America", "capacity": 30 },
-    { "id": "sales-002", "name": "Priya Menon", "territory": "India", "capacity": 25 }
+    { "id": "sales-002", "name": "Priya Menon", "territory": "India", "capacity": 25 },
+    { "id": "sales-003", "userId": "usr-student-001", "territory": "North America", "capacity": 20 }
   ],
   "companies": [
     { "id": "cmp-001", "name": "AtlasHR", "industry": "Human Resources", "employeeSize": "201-500", "region": "North America", "website": "https://atlashr.example", "isDemoData": true },
     { "id": "cmp-002", "name": "BrightForge Manufacturing", "industry": "Manufacturing", "employeeSize": "501-1000", "region": "India", "website": "https://brightforge.example", "isDemoData": true },
-    { "id": "cmp-003", "name": "Cedar & Coast Retail", "industry": "Retail", "employeeSize": "51-200", "region": "North America", "website": "https://cedarcoast.example", "isDemoData": true }
+    { "id": "cmp-003", "name": "Cedar & Coast Retail", "industry": "Retail", "employeeSize": "51-200", "region": "North America", "website": "https://cedarcoast.example", "isDemoData": true },
+    { "id": "cmp-004", "name": "Meridian Health", "industry": "Healthcare", "employeeSize": "1001-5000", "region": "North America", "website": "https://meridianhealth.example", "isDemoData": true },
+    { "id": "cmp-005", "name": "FinEdge Capital", "industry": "Financial Services", "employeeSize": "201-500", "region": "Europe", "website": "https://finedge.example", "isDemoData": true },
+    { "id": "cmp-006", "name": "SwiftLine Logistics", "industry": "Logistics", "employeeSize": "51-200", "region": "North America", "website": "https://swiftline.example", "isDemoData": true },
+    { "id": "cmp-007", "name": "NovaWorks Software", "industry": "Software", "employeeSize": "501-1000", "region": "India", "website": "https://novaworks.example", "isDemoData": true },
+    { "id": "cmp-008", "name": "Greenfield Education", "industry": "Education", "employeeSize": "11-50", "region": "North America", "website": "https://greenfield.example", "isDemoData": true }
   ],
   "leads": [
     { "id": "lead-001", "companyId": "cmp-001", "contactName": "Maya Rivera", "jobTitle": "VP People Operations", "email": "maya.rivera@atlashr.example", "source": "Webinar", "ownerId": "sales-001", "stage": "SQL", "score": 82, "createdAt": "2026-07-20T09:00:00Z", "lastActivityAt": "2026-08-12T14:00:00Z", "nextActionAt": "2026-08-16T14:00:00Z", "expectedValue": 36000 },
     { "id": "lead-002", "companyId": "cmp-002", "contactName": "Arjun Kapoor", "jobTitle": "Operations Director", "email": "arjun.kapoor@brightforge.example", "source": "Partner", "ownerId": "sales-002", "stage": "PROPOSAL", "score": 91, "createdAt": "2026-06-21T08:30:00Z", "lastActivityAt": "2026-08-01T10:00:00Z", "nextActionAt": "2026-08-15T10:00:00Z", "expectedValue": 72000 },
-    { "id": "lead-003", "companyId": "cmp-003", "contactName": "Elena Brooks", "jobTitle": "Revenue Operations Manager", "email": "elena.brooks@cedarcoast.example", "source": "Content Download", "ownerId": null, "stage": "MQL", "score": 58, "createdAt": "2026-08-03T11:15:00Z", "lastActivityAt": "2026-08-04T11:15:00Z", "nextActionAt": "2026-08-05T11:15:00Z", "expectedValue": 18000 }
+    { "id": "lead-003", "companyId": "cmp-003", "contactName": "Elena Brooks", "jobTitle": "Revenue Operations Manager", "email": "elena.brooks@cedarcoast.example", "source": "Content Download", "ownerId": null, "stage": "MQL", "score": 58, "createdAt": "2026-08-03T11:15:00Z", "lastActivityAt": "2026-08-04T11:15:00Z", "nextActionAt": "2026-08-05T11:15:00Z", "expectedValue": 18000 },
+    { "id": "lead-004", "companyId": "cmp-004", "contactName": "Sofia Delgado", "jobTitle": "Director of Operations", "email": "sofia.delgado@meridianhealth.example", "source": "Inbound", "ownerId": "sales-001", "stage": "NEW", "score": 45, "createdAt": "2026-08-14T08:00:00Z", "lastActivityAt": "2026-08-15T10:00:00Z", "nextActionAt": "2026-08-18T10:00:00Z", "expectedValue": 30000 },
+    { "id": "lead-005", "companyId": "cmp-005", "contactName": "Liam O'Connor", "jobTitle": "Head of Sales Operations", "email": "liam.oconnor@finedge.example", "source": "Referral", "ownerId": "sales-002", "stage": "OPPORTUNITY", "score": 88, "createdAt": "2026-07-05T09:30:00Z", "lastActivityAt": "2026-08-10T13:00:00Z", "nextActionAt": "2026-08-17T13:00:00Z", "expectedValue": 54000 },
+    { "id": "lead-006", "companyId": "cmp-006", "contactName": "Dana Whitfield", "jobTitle": "VP Sales", "email": "dana.whitfield@swiftline.example", "source": "Outbound", "ownerId": "sales-003", "stage": "MQL", "score": 62, "createdAt": "2026-07-28T10:00:00Z", "lastActivityAt": "2026-08-13T09:00:00Z", "nextActionAt": "2026-08-19T09:00:00Z", "expectedValue": 24000 },
+    { "id": "lead-007", "companyId": "cmp-007", "contactName": "Rohan Mehta", "jobTitle": "Chief Revenue Officer", "email": "rohan.mehta@novaworks.example", "source": "Webinar", "ownerId": "sales-003", "stage": "NEW", "score": 39, "createdAt": "2026-08-15T14:00:00Z", "lastActivityAt": "2026-08-15T14:00:00Z", "nextActionAt": "2026-08-20T14:00:00Z", "expectedValue": 45000 },
+    { "id": "lead-008", "companyId": "cmp-008", "contactName": "Priya Nair", "jobTitle": "Admissions Director", "email": "priya.nair@greenfield.example", "source": "Content Download", "ownerId": null, "stage": "NEW", "score": 30, "createdAt": "2026-08-16T09:00:00Z", "lastActivityAt": "2026-08-16T09:00:00Z", "nextActionAt": "2026-08-18T09:00:00Z", "expectedValue": 12000 },
+    { "id": "lead-009", "companyId": "cmp-001", "contactName": "Daniel Reyes", "jobTitle": "HR Systems Manager", "email": "daniel.reyes@atlashr.example", "source": "Inbound", "ownerId": "sales-001", "stage": "CLOSED_WON", "score": 95, "createdAt": "2026-05-18T08:00:00Z", "lastActivityAt": "2026-07-10T11:00:00Z", "nextActionAt": null, "expectedValue": 48000 },
+    { "id": "lead-010", "companyId": "cmp-002", "contactName": "Meera Joshi", "jobTitle": "IT Director", "email": "meera.joshi@brightforge.example", "source": "Outbound", "ownerId": "sales-002", "stage": "CLOSED_LOST", "score": 20, "createdAt": "2026-04-02T07:30:00Z", "lastActivityAt": "2026-05-25T09:00:00Z", "nextActionAt": null, "expectedValue": 15000 },
+    { "id": "lead-011", "companyId": "cmp-004", "contactName": "Alex Turner", "jobTitle": "Procurement Lead", "email": "alex.turner@meridianhealth.example", "source": "Partner", "ownerId": null, "stage": "MQL", "score": 55, "createdAt": "2026-08-08T12:00:00Z", "lastActivityAt": "2026-08-08T12:00:00Z", "nextActionAt": "2026-08-16T12:00:00Z", "expectedValue": 20000 },
+    { "id": "lead-012", "companyId": "cmp-003", "contactName": "Jordan Blake", "jobTitle": "CRM Administrator", "email": "jordan.blake@cedarcoast.example", "source": "Referral", "ownerId": "sales-003", "stage": "SQL", "score": 70, "createdAt": "2026-07-15T09:00:00Z", "lastActivityAt": "2026-07-22T10:00:00Z", "nextActionAt": "2026-07-25T10:00:00Z", "expectedValue": 26000 }
   ],
   "activities": [
     { "id": "act-001", "leadId": "lead-001", "type": "MEETING", "subject": "Discovery call", "occurredAt": "2026-08-12T14:00:00Z", "ownerId": "sales-001", "notes": "Discussed onboarding workflow pain points." },
-    { "id": "act-002", "leadId": "lead-002", "type": "EMAIL", "subject": "Proposal shared", "occurredAt": "2026-08-01T10:00:00Z", "ownerId": "sales-002", "notes": "Fictional proposal sent for training scenario." }
+    { "id": "act-002", "leadId": "lead-002", "type": "EMAIL", "subject": "Proposal shared", "occurredAt": "2026-08-01T10:00:00Z", "ownerId": "sales-002", "notes": "Fictional proposal sent for training scenario." },
+    { "id": "act-003", "leadId": "lead-005", "type": "CALL", "subject": "Qualification call", "occurredAt": "2026-08-10T13:00:00Z", "ownerId": "sales-002", "notes": "Discussed onboarding and pricing fit." },
+    { "id": "act-004", "leadId": "lead-006", "type": "EMAIL", "subject": "Follow-up sent", "occurredAt": "2026-08-13T09:00:00Z", "ownerId": "sales-003", "notes": "Shared ROI one-pager." },
+    { "id": "act-005", "leadId": "lead-012", "type": "CALL", "subject": "Voicemail — no answer", "occurredAt": "2026-07-22T10:00:00Z", "ownerId": "sales-003", "notes": "Left follow-up voicemail." },
+    { "id": "act-006", "leadId": "lead-003", "type": "EMAIL", "subject": "Intro email sent", "occurredAt": "2026-08-04T11:15:00Z", "ownerId": null, "notes": "Welcome email with demo link." }
   ],
   "opportunities": [
-    { "id": "opp-001", "companyId": "cmp-002", "leadId": "lead-002", "ownerId": "sales-002", "stage": "PROPOSAL", "amount": 72000, "currency": "USD", "expectedCloseDate": "2026-08-30" }
+    { "id": "opp-001", "companyId": "cmp-002", "leadId": "lead-002", "ownerId": "sales-002", "stage": "PROPOSAL", "amount": 72000, "currency": "USD", "expectedCloseDate": "2026-08-30" },
+    { "id": "opp-002", "companyId": "cmp-001", "leadId": "lead-009", "ownerId": "sales-001", "stage": "CLOSED_WON", "amount": 48000, "currency": "USD", "expectedCloseDate": "2026-07-10", "closedAt": "2026-07-10T11:00:00Z" },
+    { "id": "opp-003", "companyId": "cmp-005", "leadId": "lead-005", "ownerId": "sales-002", "stage": "OPPORTUNITY", "amount": 54000, "currency": "USD", "expectedCloseDate": "2026-09-15" },
+    { "id": "opp-004", "companyId": "cmp-001", "leadId": "lead-001", "ownerId": "sales-001", "stage": "PROPOSAL", "amount": 36000, "currency": "USD", "expectedCloseDate": "2026-09-01" }
+  ],
+  "targetIndustries": ["Human Resources", "Financial Services", "Software", "Logistics"],
+  "scoringFactors": [
+    { "id": "fac-001", "category": "COMPANY_FIT", "label": "Enterprise company (1000+ employees)", "field": "employeeSize", "operator": "IN", "value": ["1001-5000"], "points": 30, "position": 1 },
+    { "id": "fac-002", "category": "COMPANY_FIT", "label": "Mid-market company (201–1000 employees)", "field": "employeeSize", "operator": "IN", "value": ["201-500", "501-1000"], "points": 20, "position": 2 },
+    { "id": "fac-003", "category": "COMPANY_FIT", "label": "SMB (≤200 employees)", "field": "employeeSize", "operator": "IN", "value": ["11-50", "51-200"], "points": 10, "position": 3 },
+    { "id": "fac-004", "category": "INDUSTRY_FIT", "label": "Target industry (matches the configured list)", "field": "industry", "operator": "IN", "value": "<targetIndustries>", "points": 20, "position": 4 },
+    { "id": "fac-005", "category": "DECISION_MAKER", "label": "Decision-maker title (VP, Director, Head, Chief)", "field": "jobTitle", "operator": "CONTAINS_ANY", "value": ["VP", "Director", "Head", "Chief", "CRO", "COO"], "points": 25, "position": 5 },
+    { "id": "fac-006", "category": "ENGAGEMENT", "label": "Activity logged within the last 7 days", "field": "lastActivityAt", "operator": "WITHIN_DAYS", "value": "7", "points": 15, "position": 6 },
+    { "id": "fac-007", "category": "INTENT", "label": "High-intent source (Webinar, Inbound, Referral, Partner)", "field": "source", "operator": "IN", "value": ["Webinar", "Inbound", "Referral", "Partner"], "points": 15, "position": 7 },
+    { "id": "fac-008", "category": "INTENT", "label": "Passive source (Content Download, Outbound)", "field": "source", "operator": "IN", "value": ["Content Download", "Outbound"], "points": 5, "position": 8 },
+    { "id": "fac-009", "category": "INTENT", "label": "Moved past NEW (engaged with the process)", "field": "stage", "operator": "NOT_IN", "value": ["NEW"], "points": 10, "position": 9 }
+  ],
+  "assignmentRules": [
+    { "id": "rule-01", "name": "Enterprise accounts → senior rep", "priority": 1, "field": "employeeSize", "operator": "IN", "value": ["1001-5000"], "assignTo": "sales-001" },
+    { "id": "rule-02", "name": "Europe region → Priya", "priority": 2, "field": "region", "operator": "IN", "value": ["Europe"], "assignTo": "sales-002" },
+    { "id": "rule-03", "name": "High-score leads (≥ 80) → senior rep", "priority": 3, "field": "score", "operator": "GTE", "value": "80", "assignTo": "sales-001" },
+    { "id": "rule-04", "name": "SMB accounts → Taylor", "priority": 4, "field": "employeeSize", "operator": "IN", "value": ["11-50", "51-200"], "assignTo": "sales-003" },
+    { "id": "rule-05", "name": "All remaining leads → Priya", "priority": 5, "field": "score", "operator": "GTE", "value": "0", "assignTo": "sales-002" }
+  ],
+  "workflows": [
+    { "id": "wf-01", "workflow": "VALIDATION", "position": 1, "name": "Capture", "description": "A new lead arrives from any source (webinar, inbound, referral, outbound, content download).", "actor": "System", "condition": "Lead created" },
+    { "id": "wf-02", "workflow": "VALIDATION", "position": 2, "name": "Enrich", "description": "Attach company data — industry, employee size and region — so the lead can be scored and routed.", "actor": "System", "condition": "Company matched" },
+    { "id": "wf-03", "workflow": "VALIDATION", "position": 3, "name": "Dedupe", "description": "Check for existing contacts at the same company and merge duplicates before they enter the pipeline.", "actor": "System", "condition": "Duplicate detected" },
+    { "id": "wf-04", "workflow": "VALIDATION", "position": 4, "name": "Validate", "description": "Verify the email format and that the contact is relevant; flag invalid records for review.", "actor": "Sales operations", "condition": "All leads" },
+    { "id": "wf-05", "workflow": "ASSIGNMENT", "position": 1, "name": "Score", "description": "Compute a 0–100 lead score from company fit, industry fit, decision-maker role, engagement and intent.", "actor": "System", "condition": "Score 0–100" },
+    { "id": "wf-06", "workflow": "ASSIGNMENT", "position": 2, "name": "Match rules", "description": "Evaluate assignment rules in priority order — region, industry, employee size and score.", "actor": "System", "condition": "Rules enabled" },
+    { "id": "wf-07", "workflow": "ASSIGNMENT", "position": 3, "name": "Check workload", "description": "Skip salespeople who are at capacity so no rep's pipeline gets overloaded.", "actor": "System", "condition": "Open leads < capacity" },
+    { "id": "wf-08", "workflow": "ASSIGNMENT", "position": 4, "name": "Assign", "description": "Route the lead to the matched owner and log the rule that fired as the assignment reason.", "actor": "System", "condition": "Rule matched" },
+    { "id": "wf-09", "workflow": "FOLLOW_UP", "position": 1, "name": "First contact", "description": "Reach out within 24 hours of assignment so the lead never goes cold.", "actor": "Sales rep", "condition": "TAT ≤ 1 day" },
+    { "id": "wf-10", "workflow": "FOLLOW_UP", "position": 2, "name": "Cadence", "description": "Follow a structured cadence — call, email and LinkedIn — until the lead responds.", "actor": "Sales rep", "condition": "No reply after 3 days" },
+    { "id": "wf-11", "workflow": "FOLLOW_UP", "position": 3, "name": "Log activity", "description": "Record every touch in the activity timeline so progress and TAT stay measurable.", "actor": "Sales rep", "condition": "After each touch" },
+    { "id": "wf-12", "workflow": "FOLLOW_UP", "position": 4, "name": "Set next action", "description": "Always set a next action date so no lead slips through the cracks.", "actor": "Sales rep", "condition": "Always" },
+    { "id": "wf-13", "workflow": "ESCALATION", "position": 1, "name": "Monitor staleness", "description": "Flag open leads with no activity for 7+ days as attention, at risk or stale.", "actor": "System", "condition": "7+ days no activity" },
+    { "id": "wf-14", "workflow": "ESCALATION", "position": 2, "name": "Manager review", "description": "A manager reviews flagged leads and decides the next step — revive, reassign or archive.", "actor": "Manager", "condition": "AT_RISK or STALE" },
+    { "id": "wf-15", "workflow": "ESCALATION", "position": 3, "name": "Re-route", "description": "Reassign leads that another rep could revive, or archive leads that cannot.", "actor": "Manager", "condition": "No reply after 15 days" },
+    { "id": "wf-16", "workflow": "ESCALATION", "position": 4, "name": "Alert", "description": "Notify the owner and manager with an in-app stale-lead alert.", "actor": "System", "condition": "Alert generated" }
+  ],
+  "stageHistory": [
+    { "id": "hist-001", "leadId": "lead-001", "fromStage": "NEW", "toStage": "MQL", "changedById": "sales-001", "changedAt": "2026-07-28T10:00:00Z", "reason": "Engaged on the webinar follow-up" },
+    { "id": "hist-002", "leadId": "lead-001", "fromStage": "MQL", "toStage": "SQL", "changedById": "sales-001", "changedAt": "2026-08-05T09:00:00Z", "reason": "Discovery call completed" },
+    { "id": "hist-003", "leadId": "lead-002", "fromStage": "NEW", "toStage": "MQL", "changedById": "sales-002", "changedAt": "2026-06-28T11:00:00Z", "reason": "Partner referral validated" },
+    { "id": "hist-004", "leadId": "lead-002", "fromStage": "MQL", "toStage": "SQL", "changedById": "sales-002", "changedAt": "2026-07-05T10:00:00Z", "reason": "Qualified on first call" },
+    { "id": "hist-005", "leadId": "lead-002", "fromStage": "SQL", "toStage": "OPPORTUNITY", "changedById": "sales-002", "changedAt": "2026-07-12T14:00:00Z", "reason": "Budget confirmed" },
+    { "id": "hist-006", "leadId": "lead-002", "fromStage": "OPPORTUNITY", "toStage": "PROPOSAL", "changedById": "sales-002", "changedAt": "2026-07-20T09:30:00Z", "reason": "Proposal shared with procurement" },
+    { "id": "hist-007", "leadId": "lead-003", "fromStage": "NEW", "toStage": "MQL", "changedById": "sales-001", "changedAt": "2026-08-04T11:30:00Z", "reason": "Opened the content download" },
+    { "id": "hist-008", "leadId": "lead-005", "fromStage": "NEW", "toStage": "MQL", "changedById": "sales-002", "changedAt": "2026-07-12T09:00:00Z", "reason": "Referred by an existing customer" },
+    { "id": "hist-009", "leadId": "lead-005", "fromStage": "MQL", "toStage": "SQL", "changedById": "sales-002", "changedAt": "2026-07-19T13:00:00Z", "reason": "Qualification call completed" },
+    { "id": "hist-010", "leadId": "lead-005", "fromStage": "SQL", "toStage": "OPPORTUNITY", "changedById": "sales-002", "changedAt": "2026-07-28T10:00:00Z", "reason": "Solution fit confirmed" },
+    { "id": "hist-011", "leadId": "lead-006", "fromStage": "NEW", "toStage": "MQL", "changedById": "sales-003", "changedAt": "2026-08-04T09:00:00Z", "reason": "Responded to outbound email" },
+    { "id": "hist-012", "leadId": "lead-009", "fromStage": "NEW", "toStage": "MQL", "changedById": "sales-001", "changedAt": "2026-05-25T10:00:00Z", "reason": "Requested a demo" },
+    { "id": "hist-013", "leadId": "lead-009", "fromStage": "MQL", "toStage": "SQL", "changedById": "sales-001", "changedAt": "2026-06-01T09:00:00Z", "reason": "Demo completed" },
+    { "id": "hist-014", "leadId": "lead-009", "fromStage": "SQL", "toStage": "OPPORTUNITY", "changedById": "sales-001", "changedAt": "2026-06-10T14:00:00Z", "reason": "Champion identified" },
+    { "id": "hist-015", "leadId": "lead-009", "fromStage": "OPPORTUNITY", "toStage": "PROPOSAL", "changedById": "sales-001", "changedAt": "2026-06-18T11:00:00Z", "reason": "Pricing proposal sent" },
+    { "id": "hist-016", "leadId": "lead-009", "fromStage": "PROPOSAL", "toStage": "CLOSED_WON", "changedById": "sales-001", "changedAt": "2026-07-10T11:00:00Z", "reason": "Contract signed" },
+    { "id": "hist-017", "leadId": "lead-010", "fromStage": "NEW", "toStage": "MQL", "changedById": "sales-002", "changedAt": "2026-04-10T09:00:00Z", "reason": "Campaign response" },
+    { "id": "hist-018", "leadId": "lead-010", "fromStage": "MQL", "toStage": "SQL", "changedById": "sales-002", "changedAt": "2026-04-18T13:00:00Z", "reason": "Qualified on call" },
+    { "id": "hist-019", "leadId": "lead-010", "fromStage": "SQL", "toStage": "CLOSED_LOST", "changedById": "sales-002", "changedAt": "2026-05-25T09:00:00Z", "reason": "Went with a competitor" },
+    { "id": "hist-020", "leadId": "lead-011", "fromStage": "NEW", "toStage": "MQL", "changedById": "sales-001", "changedAt": "2026-08-08T12:30:00Z", "reason": "Partner referral received" },
+    { "id": "hist-021", "leadId": "lead-012", "fromStage": "NEW", "toStage": "MQL", "changedById": "sales-003", "changedAt": "2026-07-18T10:00:00Z", "reason": "Replied to referral" },
+    { "id": "hist-022", "leadId": "lead-012", "fromStage": "MQL", "toStage": "SQL", "changedById": "sales-003", "changedAt": "2026-07-22T10:00:00Z", "reason": "Initial call completed" }
   ]
 }

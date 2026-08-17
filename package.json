@@ -1,13 +1,41 @@
 {
   "name": "sales-intelligence-training-platform",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "Phase 0 foundation for the Sales Intelligence, CRM & AI Automation Mastery platform.",
+  "description": "Sales Intelligence, CRM & AI Automation Mastery platform with authentication, database, and modular frontend.",
+  "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "test": "node --test"
+    "build:db": "tsc",
+    "start": "npm run build:db && node server.js",
+    "dev": "vite",
+    "build": "npm run build:db && vite build",
+    "preview": "vite preview",
+    "pretest": "npm run build:db",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "predb:init": "npm run build:db",
+    "db:init": "node scripts/init-db.js",
+    "predb:seed": "npm run build:db",
+    "db:seed": "node scripts/seed-db.js",
+    "restart": "node scripts/restart.js",
+    "lint": "eslint src --ext .ts,.tsx"
   },
   "engines": {
     "node": ">=20"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "better-sqlite3": "^9.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/better-sqlite3": "^7.6.8",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.12",
+    "vitest": "^1.2.2"
   }
 }

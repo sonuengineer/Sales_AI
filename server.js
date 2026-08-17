@@ -1,78 +1,82 @@
-const http = require('node:http');
-const fs = require('node:fs');
-const path = require('node:path');
-const crypto = require('node:crypto');
-const seed = require('./data/nexaflow.seed.json');
+import http from 'node:http';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { openDb } from './dist/db/index.js';
+import { createApiContext } from './src/api/context.js';
+import { createAuthRoutes } from './src/api/auth.js';
+import { createCourseRoutes } from './src/api/course.js';
+import { createCrmRoutes } from './src/api/crm.js';
+import { createAnalyticsRoutes } from './src/api/analytics.js';
+import { createWorkflowRoutes } from './src/api/workflow.js';
+import { createAiRoutes } from './src/api/ai.js';
+import { createActivitiesRoutes } from './src/api/activities.js';
+import { createCapstoneRoutes } from './src/api/capstone.js';
+import { createCohortRoutes } from './src/api/cohorts.js';
+import { createCertificateRoutes } from './src/api/certificates.js';
+import { createReportRoutes } from './src/api/reports.js';
 
-const root = path.join(__dirname, 'public');
-const sessions = new Map();
-const contentTypes = { '.css': 'text/css; charset=utf-8', '.html': 'text/html; charset=utf-8', '.js': 'application/javascript; charset=utf-8', '.json': 'application/json; charset=utf-8' };
-const dashboardData = {
-  ADMIN: { heading: 'Platform overview', description: 'Monitor the fictional NexaFlow beta cohort and keep learning delivery on track.', metrics: [['Active learners', '10'], ['Course completion', '34%'], ['Reviews awaiting action', '4']] },
-  INSTRUCTOR: { heading: 'Teaching workspace', description: 'Guide your cohort through practical Sales Intelligence training.', metrics: [['Learners in cohort', '10'], ['Work awaiting review', '4'], ['Lessons published', '0']] },
-  STUDENT: { heading: 'Your learning dashboard', description: 'Build your Sales Intelligence portfolio one practical step at a time.', metrics: [['Course progress', '0%'], ['Next activity', 'Orientation'], ['Submitted work', '0']] }
-};
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const SESSION_SECRET = process.env.SESSION_SECRET || 'nexaflow-demo-secret';
+const contentTypes = { '.css': 'text/css; charset=utf-8', '.html': 'text/html; charset=utf-8', '.js': 'application/javascript; charset=utf-8', '.json': 'application/json; charset=utf-8', '.svg': 'image/svg+xml' };
 
-function parseCookies(value = '') {
-  return Object.fromEntries(value.split(';').filter(Boolean).map((part) => {
-    const index = part.indexOf('=');
-    return [part.slice(0, index).trim(), decodeURIComponent(part.slice(index + 1).trim())];
-  }).filter(([key]) => key));
-}
-function getSession(request) { return sessions.get(parseCookies(request.headers.cookie).session); }
-function publicUser(user) { return { id: user.id, name: user.name, email: user.email, role: user.role }; }
-function sendJson(response, status, payload, headers = {}) { response.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', ...headers }); response.end(JSON.stringify(payload)); }
-function readJson(request) {
-  return new Promise((resolve, reject) => {
-    let body = '';
-    request.on('data', (chunk) => { body += chunk; if (body.length > 10_000) request.destroy(); });
-    request.on('end', () => { try { resolve(body ? JSON.parse(body) : {}); } catch { reject(new Error('Invalid JSON')); } });
-    request.on('error', reject);
-  });
-}
-function requireRole(request, response, role) {
-  const user = getSession(request);
-  if (!user) { sendJson(response, 401, { error: 'Please sign in to continue.' }); return null; }
-  if (user.role !== role) { sendJson(response, 403, { error: 'You do not have access to this area.' }); return null; }
-  return user;
-}
-async function handleApi(request, response, pathname) {
-  if (request.method === 'GET' && pathname === '/api/session') return sendJson(response, 200, { user: getSession(request) ? publicUser(getSession(request)) : null });
-  if (request.method === 'POST' && pathname === '/api/login') {
-    try {
-      const { email, password } = await readJson(request);
-      const user = seed.users.find((entry) => entry.email === String(email).toLowerCase());
-      if (!user || password !== 'demo123') return sendJson(response, 401, { error: 'Use one of the supplied demo accounts and password.' });
-      const token = crypto.randomBytes(32).toString('hex'); sessions.set(token, user);
-      return sendJson(response, 200, { user: publicUser(user) }, { 'Set-Cookie': `session=${token}; HttpOnly; SameSite=Strict; Path=/` });
-    } catch { return sendJson(response, 400, { error: 'Please provide valid sign-in details.' }); }
+export function createServer({ db: database } = {}) {
+  const db = database || openDb();
+  const meta = db.prepare('SELECT value FROM platform_meta WHERE key = ?');
+  const referenceDate = new Date(meta.get('referenceDate')?.value || Date.now());
+  const ctx = createApiContext({ db, secret: SESSION_SECRET, referenceDate });
+  const routeHandlers = [
+    createAuthRoutes(ctx),
+    createCourseRoutes(ctx),
+    createCrmRoutes(ctx),
+    createAnalyticsRoutes(ctx),
+    createWorkflowRoutes(ctx),
+    createAiRoutes(ctx),
+    createActivitiesRoutes(ctx),
+    createCapstoneRoutes(ctx),
+    createCohortRoutes(ctx),
+    createCertificateRoutes(ctx),
+    createReportRoutes(ctx),
+  ];
+
+  async function handleApi(request, response, pathname) {
+    for (const handler of routeHandlers) {
+      if (await handler(request, response, pathname)) return;
+    }
+    return ctx.sendJson(response, 404, { error: 'Not found.' });
   }
-  if (request.method === 'POST' && pathname === '/api/logout') {
-    const token = parseCookies(request.headers.cookie).session; if (token) sessions.delete(token);
-    return sendJson(response, 200, { ok: true }, { 'Set-Cookie': 'session=; HttpOnly; SameSite=Strict; Path=/; Max-Age=0' });
+
+  function serveStatic(response, pathname) {
+    const root = fs.existsSync(path.join(__dirname, 'dist')) ? path.join(__dirname, 'dist') : path.join(__dirname, 'public');
+    const requested = pathname === '/' ? '/index.html' : pathname;
+    const filePath = path.resolve(root, `.${requested}`);
+    if (!filePath.startsWith(root + path.sep) && filePath !== path.join(root, 'index.html')) { response.writeHead(403); return response.end('Forbidden'); }
+    fs.readFile(filePath, (error, file) => {
+      if (error) { response.writeHead(error.code === 'ENOENT' ? 404 : 500); return response.end(error.code === 'ENOENT' ? 'Not found' : 'Server error'); }
+      response.writeHead(200, { 'Content-Type': contentTypes[path.extname(filePath)] || 'application/octet-stream' }); response.end(file);
+    });
   }
-  const match = pathname.match(/^\/api\/dashboard\/(admin|instructor|student)$/);
-  if (request.method === 'GET' && match) {
-    const role = match[1].toUpperCase(); const user = requireRole(request, response, role);
-    if (!user) return; return sendJson(response, 200, { user: publicUser(user), dashboard: dashboardData[role] });
-  }
-  return sendJson(response, 404, { error: 'Not found.' });
-}
-function serveStatic(response, pathname) {
-  const requested = pathname === '/' ? '/index.html' : pathname;
-  const filePath = path.resolve(root, `.${requested}`);
-  if (!filePath.startsWith(root + path.sep) && filePath !== path.join(root, 'index.html')) { response.writeHead(403); return response.end('Forbidden'); }
-  fs.readFile(filePath, (error, file) => {
-    if (error) { response.writeHead(error.code === 'ENOENT' ? 404 : 500); return response.end(error.code === 'ENOENT' ? 'Not found' : 'Server error'); }
-    response.writeHead(200, { 'Content-Type': contentTypes[path.extname(filePath)] || 'application/octet-stream' }); response.end(file);
-  });
-}
-function createServer() {
+
   return http.createServer((request, response) => {
     const pathname = new URL(request.url, 'http://localhost').pathname;
-    if (pathname.startsWith('/api/')) return handleApi(request, response, pathname);
+    if (pathname.startsWith('/api/')) {
+      return handleApi(request, response, pathname).catch(() => { if (!response.headersSent) ctx.sendJson(response, 400, { error: 'The request could not be processed.' }); });
+    }
     return serveStatic(response, pathname);
   });
 }
-if (require.main === module) { const port = Number(process.env.PORT || 3000); createServer().listen(port, () => console.log(`Sales Intelligence platform running at http://localhost:${port}`)); }
-module.exports = { createServer, parseCookies };
+
+async function ensureSeeded(db) {
+  const count = db.prepare('SELECT COUNT(*) AS count FROM users').get().count;
+  if (count === 0) { const { seedDatabase } = await import('./scripts/seed.js'); seedDatabase(db); }
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  const db = openDb();
+  ensureSeeded(db).then(() => {
+    const port = Number(process.env.PORT || 3000);
+    createServer({ db }).listen(port, () => console.log(`Sales Intelligence platform running at http://localhost:${port}`));
+  });
+}
+
+export { parseCookies } from './src/middleware/auth.js';
